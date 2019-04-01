@@ -255,13 +255,22 @@ let customers = [
 
 // console.log(emailAdds)
 
-arrayOfEmails = []
+//   HOW TO WITHOUT NESTING
 
-customers.forEach(customer => {
-    arrayOfEmails += '  ' + customer.contacts.email  + '  , '
-    });
+// arrayOfEmails = []
 
- console.log(arrayOfEmails)
+// customers.forEach(customer => {
+//     arrayOfEmails += '  ' + customer.contacts.email  + '  , '
+//     });
+
+//  console.log(arrayOfEmails)
+
+//   WITH NESTING
+
+let arrayOfEmails = customers.map(customer => {
+  return customer.contacts.email.map(emailAddress => emailAddress)
+})
+console.log(arrayOfEmails)
 
 
 
